@@ -5,8 +5,9 @@ const skills = [
   { name: "HTML5", slug: "html5" },
   { name: "CSS3", slug: "css" },
   { name: "Python", slug: "python" },
-  { name: "Godot Engine", slug: "godotengine" },
+  { name: "GameMaker", slug: "gamemaker" },
   { name: "Figma", slug: "figma" },
+  { name: "Pacote Office", slug: "microsoftoffice" },
 ];
 
 export function Skills() {
