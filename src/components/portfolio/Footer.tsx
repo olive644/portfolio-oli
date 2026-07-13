@@ -9,7 +9,7 @@ export function Footer() {
             Oliver<span className="text-gradient">.</span>
           </a>
           <p className="mt-1 text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Oliver. Feito com café, código e uma boa playlist.
+            © {new Date().getFullYear()} Oliver. Todos os direitos reservados Oli - DEV.
           </p>
         </div>
         <SocialLinks size="sm" />
