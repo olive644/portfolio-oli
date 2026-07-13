@@ -7,7 +7,7 @@ import { SocialLinks } from "./SocialLinks";
 
 // Web3Forms public access key (safe to expose in the frontend).
 // Get yours for free at https://web3forms.com by entering oliverteixeira122020@gmail.com.
-const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_ACCESS_KEY = "a9c94130-49c6-4b31-a349-51bb74f75cce";
 
 const contactSchema = z.object({
   name: z
