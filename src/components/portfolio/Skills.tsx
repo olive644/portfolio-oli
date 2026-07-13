@@ -7,7 +7,6 @@ const skills = [
   { name: "Python", slug: "python" },
   { name: "GameMaker", slug: "gamemaker" },
   { name: "Figma", slug: "figma" },
-  { name: "Pacote Office", slug: "microsoftoffice" },
 ];
 
 export function Skills() {
