@@ -10,7 +10,7 @@ const projects = [
     description:
       "Site institucional para uma nail designer, com identidade visual acolhedora e agendamento online. Foco em elegância, técnica e conversão.",
     image: project1,
-    href: "https://gisellynails.vercel.app/",
+    href: "https://gisellynail.vercel.app/",
     stack: ["HTML5", "CSS3", "JavaScript"],
   },
   {
