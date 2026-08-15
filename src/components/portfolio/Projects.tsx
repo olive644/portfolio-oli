@@ -1,107 +1,41 @@
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import project1 from "@/assets/project1.jpg";
 import project2 from "@/assets/project2.jpg";
 import { Reveal } from "./Reveal";
 
 const projects = [
-  {
-    title: "Giselly Victoria Nails",
-    tag: "Site institucional",
-    description:
-      "Site institucional para uma nail designer, com identidade visual acolhedora e agendamento online. Foco em elegância, técnica e conversão.",
-    image: project1,
-    href: "https://gisellynail.vercel.app/",
-    stack: ["HTML5", "CSS3", "JavaScript"],
-  },
-  {
-    title: "Sono Perfeito em 30 Dias",
-    tag: "Landing page",
-    description:
-      "Landing page com quiz interativo que diagnostica o perfil de sono do usuário em 7 perguntas. Interface imersiva em tema noturno.",
-    image: project2,
-    href: "https://sonoperfeito-em30dias.netlify.app/",
-    stack: ["JavaScript", "HTML5", "CSS3"],
-  },
+  { number: "01", title: "Giselly Victoria Nails", kind: "Site institucional", description: "Site para uma nail designer, com apresentação dos serviços e caminho direto para agendamento.", image: project1, href: "https://gisellynail.vercel.app/", stack: "HTML · CSS · JavaScript" },
+  { number: "02", title: "Sono Perfeito em 30 Dias", kind: "Landing page + quiz", description: "Página com um quiz de sete perguntas que organiza o perfil de sono antes da oferta.", image: project2, href: "https://sonoperfeito-em30dias.netlify.app/", stack: "JavaScript · HTML · CSS" },
 ];
 
 export function Projects() {
   return (
-    <section id="projetos" className="relative py-24 sm:py-32">
+    <section id="projetos" className="border-b border-border py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-accent">
-            Projetos
-          </p>
-          <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
-            Ideias que virei <span className="text-gradient">realidade</span>
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Uma seleção de projetos que construí colocando a mão no código do início ao fim.
-          </p>
+        <Reveal className="grid gap-6 sm:grid-cols-[180px_1fr]">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">04 / Projetos</p>
+          <h2 className="max-w-3xl text-5xl leading-none sm:text-7xl">Trabalhos que já saíram da tela em branco.</h2>
         </Reveal>
-
-        <div className="mt-14 grid gap-8 md:grid-cols-2">
-          {projects.map((project, i) => (
-            <Reveal key={project.title} delay={i * 120}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card/60 transition-all duration-500 hover:-translate-y-2 hover:border-primary/60 hover:shadow-card">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={`Preview do projeto ${project.title}`}
-                    className="aspect-[4/3] w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent opacity-70" />
-                  <span className="absolute left-4 top-4 rounded-full border border-border bg-background/70 px-3 py-1 text-xs font-medium text-foreground backdrop-blur">
-                    {project.tag}
-                  </span>
-                </div>
-
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {project.description}
-                  </p>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group/link mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:glow-violet"
-                  >
-                    Ver Projeto
-                    <ArrowUpRight
-                      size={16}
-                      className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                    />
-                  </a>
+        <div className="mt-14 space-y-16 sm:space-y-24">
+          {projects.map((project, index) => (
+            <Reveal key={project.title} delay={index * 100}>
+              <article className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+                <a href={project.href} target="_blank" rel="noreferrer" className="block overflow-hidden border border-border bg-card">
+                  <img src={project.image} alt={`Tela do projeto ${project.title}`} className="aspect-[16/10] w-full object-cover transition duration-500 hover:scale-[1.015]" loading="lazy" />
+                </a>
+                <div className="border-t border-border pt-5">
+                  <div className="flex justify-between font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground"><span>{project.number}</span><span>{project.kind}</span></div>
+                  <h3 className="mt-8 text-4xl leading-none sm:text-5xl">{project.title}</h3>
+                  <p className="mt-5 leading-relaxed text-muted-foreground">{project.description}</p>
+                  <p className="mt-5 font-mono text-xs text-muted-foreground">{project.stack}</p>
+                  <a href={project.href} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 border-b-2 border-accent pb-1 text-sm font-semibold">Abrir projeto <ArrowUpRight size={16} /></a>
                 </div>
               </article>
             </Reveal>
           ))}
         </div>
-
-        <Reveal className="mt-10 flex justify-center">
-          <a
-            href="https://github.com/olive644"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/50 px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-accent hover:text-accent"
-          >
-            Ver mais no GitHub
-            <ExternalLink size={15} />
-          </a>
+        <Reveal className="mt-16 border-t border-border pt-6 text-right">
+          <a href="https://github.com/olive644" target="_blank" rel="noreferrer" className="text-sm text-muted-foreground underline underline-offset-8 hover:text-foreground">Outros experimentos no GitHub</a>
         </Reveal>
       </div>
     </section>
