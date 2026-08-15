@@ -1,43 +1,25 @@
 import { Reveal } from "./Reveal";
 
-const skills = [
-  { name: "JavaScript", slug: "javascript" },
-  { name: "HTML5", slug: "html5" },
-  { name: "CSS3", slug: "css" },
-  { name: "Python", slug: "python" },
-  { name: "GameMaker", slug: "gamemaker" },
-  { name: "Figma", slug: "figma" },
-];
+const skills = ["JavaScript", "HTML & CSS", "Python", "GameMaker", "Figma"];
 
 export function Skills() {
   return (
-    <section id="skills" className="relative py-24 sm:py-32">
+    <section id="skills" className="border-b border-border py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-accent">
-            Skills
-          </p>
-          <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
-            Tecnologias que <span className="text-gradient">uso</span>
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            As ferramentas que fazem parte do meu dia a dia construindo interfaces, lógica e jogos.
-          </p>
+        <Reveal className="grid gap-6 sm:grid-cols-[180px_1fr]">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">03 / Ferramentas</p>
+          <div>
+            <h2 className="text-5xl sm:text-7xl">O que uso hoje</h2>
+            <p className="mt-4 max-w-xl text-muted-foreground">Uma lista direta do que já faz parte da minha rotina de estudo e criação.</p>
+          </div>
         </Reveal>
-
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {skills.map((skill, i) => (
-            <Reveal key={skill.name} delay={i * 70}>
-              <div className="group flex h-full flex-col items-center gap-4 rounded-2xl border border-border bg-card/60 p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:border-primary/60 hover:glow-violet">
-                <img
-                  src={`https://cdn.simpleicons.org/${skill.slug}/ffffff`}
-                  alt={`Logo ${skill.name}`}
-                  className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <span className="text-sm font-medium text-muted-foreground transition-colors group-hover:text-foreground">
-                  {skill.name}
-                </span>
+        <div className="mt-12 border-t border-border">
+          {skills.map((skill, index) => (
+            <Reveal key={skill} delay={index * 55}>
+              <div className="group grid grid-cols-[56px_1fr_auto] items-center border-b border-border py-5 transition-colors hover:text-accent sm:py-7">
+                <span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>
+                <span className="font-display text-3xl sm:text-5xl">{skill}</span>
+                <span className="text-sm text-muted-foreground transition-transform group-hover:translate-x-1">→</span>
               </div>
             </Reveal>
           ))}
