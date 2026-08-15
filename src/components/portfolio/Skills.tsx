@@ -1,29 +1,57 @@
+import { useRef, type PointerEvent } from "react";
 import { Reveal } from "./Reveal";
 
-const skills = ["JavaScript", "HTML & CSS", "Python", "GameMaker", "Figma"];
+const skills = [
+  { name: "JavaScript", code: "JS", note: "INTERAÇÃO" },
+  { name: "HTML", code: "05", note: "ESTRUTURA" },
+  { name: "CSS", code: "CSS", note: "INTERFACE" },
+  { name: "Python", code: "PY", note: "LÓGICA" },
+  { name: "GameMaker", code: "GM", note: "JOGOS" },
+  { name: "Figma", code: "FG", note: "PROTÓTIPO" },
+];
+
+function SkillKey({ skill, index }: { skill: (typeof skills)[number]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const move = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "touch") return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    ref.current?.style.setProperty("--rx", `${y * -13}deg`);
+    ref.current?.style.setProperty("--ry", `${x * 16}deg`);
+  };
+  const reset = () => {
+    ref.current?.style.setProperty("--rx", "0deg");
+    ref.current?.style.setProperty("--ry", "0deg");
+  };
+
+  return (
+    <div className="skill-scene" data-skill-card>
+      <div ref={ref} className="skill-key" onPointerMove={move} onPointerLeave={reset}>
+        <span className="skill-key-index">0{index + 1}</span>
+        <span className="skill-key-code">{skill.code}</span>
+        <span className="skill-key-name">{skill.name}</span>
+        <span className="skill-key-note">{skill.note}</span>
+      </div>
+    </div>
+  );
+}
 
 export function Skills() {
   return (
-    <section id="skills" className="border-b border-border py-20 sm:py-28">
+    <section id="skills" className="border-b border-border py-20 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal className="grid gap-6 sm:grid-cols-[180px_1fr]">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">03 / Ferramentas</p>
+        <Reveal className="grid gap-8 border-b border-border pb-10 sm:grid-cols-[180px_1fr]">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">03 / Ferramentas</p>
           <div>
-            <h2 className="text-5xl sm:text-7xl">O que uso hoje</h2>
-            <p className="mt-4 max-w-xl text-muted-foreground">Uma lista direta do que já faz parte da minha rotina de estudo e criação.</p>
+            <h2 className="max-w-3xl text-5xl leading-[0.9] sm:text-8xl">Meu kit de construção.</h2>
+            <p className="mt-5 max-w-xl text-muted-foreground">Tecnologias que uso para transformar uma ideia em interface, lógica ou jogo.</p>
           </div>
         </Reveal>
-        <div className="mt-12 border-t border-border">
-          {skills.map((skill, index) => (
-            <Reveal key={skill} delay={index * 55}>
-              <div className="group grid grid-cols-[56px_1fr_auto] items-center border-b border-border py-5 transition-colors hover:text-accent sm:py-7">
-                <span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>
-                <span className="font-display text-3xl sm:text-5xl">{skill}</span>
-                <span className="text-sm text-muted-foreground transition-transform group-hover:translate-x-1">→</span>
-              </div>
-            </Reveal>
-          ))}
+        <div className="skill-grid mt-14">
+          {skills.map((skill, index) => <SkillKey key={skill.name} skill={skill} index={index} />)}
         </div>
+        <p className="mt-10 text-right font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Passe o cursor para explorar a profundidade</p>
       </div>
     </section>
   );
