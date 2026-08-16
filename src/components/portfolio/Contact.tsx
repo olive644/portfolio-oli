@@ -35,7 +35,7 @@ export function Contact() {
         <Reveal className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">05 / Contato</p>
-            <div className="mt-6"><TextReveal text="Entre em contato" as="h2" fontSize="clamp(3.8rem, 7.5vw, 7rem)" staggerDelay={28} duration={350} color="#f4f4f1" hoverColor="#777" style={{ fontFamily: "var(--font-display)", fontWeight: 400, textTransform: "none", letterSpacing: "-0.045em" }} /></div>
+            <div className="mt-6"><TextReveal text="Entre em contato" as="h2" fontSize="clamp(3.8rem, 7.5vw, 7rem)" staggerDelay={28} duration={350} color="#f4f4f1" hoverColor="#777" className="font-sans" /></div>
             <p className="mt-8 max-w-sm leading-relaxed text-muted-foreground">Se quiser falar sobre um projeto, código, jogos ou música, escreva por aqui.</p>
             <a href="mailto:oliverteixeira122020@gmail.com" className="mt-8 inline-flex items-center gap-2 text-sm underline decoration-accent decoration-2 underline-offset-8">oliverteixeira122020@gmail.com <ArrowUpRight size={16} /></a>
           </div>
