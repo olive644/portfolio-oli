@@ -15,7 +15,7 @@ export function About() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[180px_1fr]">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">02 / Sobre</p>
-          <TextReveal text="Ambicioso" as="h2" fontSize="clamp(3.8rem, 8vw, 7rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" style={{ fontFamily: "var(--font-display)", fontWeight: 400, textTransform: "none", letterSpacing: "-0.04em" }} />
+          <TextReveal text="Ambicioso" as="h2" fontSize="clamp(3.8rem, 8vw, 7rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" className="font-sans" />
         </Reveal>
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <Reveal><img src={aboutImg} alt="Oliver" className="aspect-[4/5] w-full object-cover grayscale" /></Reveal>

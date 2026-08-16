@@ -16,28 +16,21 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Oliver Teixeira — Desenvolvedor" },
       { name: "description", content: "Portfólio de Oliver Teixeira: projetos web, estudos de programação e criação de jogos." },
-      { name: "author", content: "Oliver Teixeira" },
-      { property: "og:title", content: "Oliver Teixeira — Desenvolvedor" },
+      { name: "author", content: "Oliver Teixeira" }, { property: "og:title", content: "Oliver Teixeira — Desenvolvedor" },
       { property: "og:description", content: "Projetos web, estudos de programação e criação de jogos." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "stylesheet", href: appCss }, { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" },
     ],
   }),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+  shellComponent: RootShell, component: RootComponent, notFoundComponent: NotFoundComponent, errorComponent: ErrorComponent,
 });
 
 function RootShell({ children }: { children: ReactNode }) {
