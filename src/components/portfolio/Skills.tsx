@@ -1,13 +1,11 @@
 import { useRef, type PointerEvent } from "react";
+import { TextReveal } from "@/components/ui/cascade-text";
 import { Reveal } from "./Reveal";
 
 const skills = [
-  { name: "JavaScript", code: "JS", note: "INTERAÇÃO" },
-  { name: "HTML", code: "05", note: "ESTRUTURA" },
-  { name: "CSS", code: "CSS", note: "INTERFACE" },
-  { name: "Python", code: "PY", note: "LÓGICA" },
-  { name: "GameMaker", code: "GM", note: "JOGOS" },
-  { name: "Figma", code: "FG", note: "PROTÓTIPO" },
+  { name: "JavaScript", code: "JS", note: "INTERAÇÃO" }, { name: "HTML", code: "05", note: "ESTRUTURA" },
+  { name: "CSS", code: "CSS", note: "INTERFACE" }, { name: "Python", code: "PY", note: "LÓGICA" },
+  { name: "GameMaker", code: "GM", note: "JOGOS" }, { name: "Figma", code: "FG", note: "PROTÓTIPO" },
 ];
 
 function SkillKey({ skill, index }: { skill: (typeof skills)[number]; index: number }) {
@@ -20,21 +18,8 @@ function SkillKey({ skill, index }: { skill: (typeof skills)[number]; index: num
     ref.current?.style.setProperty("--rx", `${y * -13}deg`);
     ref.current?.style.setProperty("--ry", `${x * 16}deg`);
   };
-  const reset = () => {
-    ref.current?.style.setProperty("--rx", "0deg");
-    ref.current?.style.setProperty("--ry", "0deg");
-  };
-
-  return (
-    <div className="skill-scene" data-skill-card>
-      <div ref={ref} className="skill-key" onPointerMove={move} onPointerLeave={reset}>
-        <span className="skill-key-index">0{index + 1}</span>
-        <span className="skill-key-code">{skill.code}</span>
-        <span className="skill-key-name">{skill.name}</span>
-        <span className="skill-key-note">{skill.note}</span>
-      </div>
-    </div>
-  );
+  const reset = () => { ref.current?.style.setProperty("--rx", "0deg"); ref.current?.style.setProperty("--ry", "0deg"); };
+  return <div className="skill-scene" data-skill-card><div ref={ref} className="skill-key" onPointerMove={move} onPointerLeave={reset}><span className="skill-key-index">0{index + 1}</span><span className="skill-key-code">{skill.code}</span><span className="skill-key-name">{skill.name}</span><span className="skill-key-note">{skill.note}</span></div></div>;
 }
 
 export function Skills() {
@@ -43,14 +28,9 @@ export function Skills() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="grid gap-8 border-b border-border pb-10 sm:grid-cols-[180px_1fr]">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">03 / Ferramentas</p>
-          <div>
-            <h2 className="max-w-3xl text-5xl leading-[0.9] sm:text-8xl">Meu kit de construção.</h2>
-            <p className="mt-5 max-w-xl text-muted-foreground">Tecnologias que uso para transformar uma ideia em interface, lógica ou jogo.</p>
-          </div>
+          <div><TextReveal text="Skills" as="h2" fontSize="clamp(4rem, 9vw, 7.5rem)" staggerDelay={58} duration={400} color="#f4f4f1" hoverColor="#777" style={{ fontFamily: "var(--font-display)", fontWeight: 400, textTransform: "none", letterSpacing: "-0.045em" }} /><p className="mt-5 max-w-xl text-muted-foreground">Tecnologias que uso para transformar uma ideia em interface, lógica ou jogo.</p></div>
         </Reveal>
-        <div className="skill-grid mt-14">
-          {skills.map((skill, index) => <SkillKey key={skill.name} skill={skill} index={index} />)}
-        </div>
+        <div className="skill-grid mt-14">{skills.map((skill, index) => <SkillKey key={skill.name} skill={skill} index={index} />)}</div>
         <p className="mt-10 text-right font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Passe o cursor para explorar a profundidade</p>
       </div>
     </section>

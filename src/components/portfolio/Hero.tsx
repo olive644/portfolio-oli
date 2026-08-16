@@ -1,5 +1,6 @@
 import { ArrowDownRight } from "lucide-react";
 import profile from "@/assets/profile.png";
+import { TextReveal } from "@/components/ui/cascade-text";
 import { SocialLinks } from "./SocialLinks";
 
 export function Hero() {
@@ -9,7 +10,9 @@ export function Hero() {
       <div className="relative mx-auto grid min-h-[calc(100svh-7rem)] max-w-6xl gap-12 px-5 pb-16 sm:px-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:pb-24">
         <div>
           <p data-hero-kicker className="mb-8 font-mono text-xs uppercase tracking-[0.22em] text-accent">Oliver Teixeira · Desenvolvedor em formação</p>
-          <div className="overflow-hidden py-2 [perspective:900px]"><h1 data-hero-title className="max-w-4xl text-[clamp(4rem,11vw,9rem)] leading-[0.78] tracking-[-0.055em] will-change-transform">Código, jogos <span className="italic text-accent">&</span> curiosidade.</h1></div>
+          <div className="overflow-hidden py-2 [perspective:900px]">
+            <div data-hero-title><TextReveal text="Sobre Mim" as="h1" fontSize="clamp(4.5rem, 12vw, 9.5rem)" staggerDelay={38} duration={360} easing="cubic-bezier(0.22, 1, 0.36, 1)" color="#f4f4f1" hoverColor="#858585" className="max-w-4xl" style={{ fontFamily: "var(--font-display)", fontWeight: 400, textTransform: "none", letterSpacing: "-0.055em" }} /></div>
+          </div>
           <div data-hero-copy className="mt-10 grid max-w-3xl gap-8 border-t border-border pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">Tenho 19 anos e aprendo programação construindo. Aqui estão os projetos, ferramentas e interesses que formam meu caminho até agora.</p>
             <a href="#projetos" className="inline-flex items-center gap-2 text-sm font-semibold underline decoration-accent decoration-2 underline-offset-8">Explorar projetos <ArrowDownRight size={17} /></a>
