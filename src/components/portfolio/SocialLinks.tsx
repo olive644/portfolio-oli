@@ -1,23 +1,27 @@
-import { Instagram, Linkedin, Github, Mail } from "lucide-react";
+import { Instagram, Linkedin, Github } from "lucide-react";
 
 export const socials = [
-  { label: "GitHub", href: "https://github.com/olive644", icon: Github },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/josé-gilson-8a0482393/", icon: Linkedin },
-  { label: "Instagram", href: "https://www.instagram.com/galeria.oli/", icon: Instagram },
-  { label: "Email", href: "mailto:oliverteixeira122020@gmail.com", icon: Mail },
+  { label: "LinkedIn", tooltip: "LinkedIn", href: "https://www.linkedin.com/in/josé-gilson-8a0482393/", social: "linkedin", icon: Linkedin },
+  { label: "GitHub", tooltip: "GitHub", href: "https://github.com/olive644", social: "github", icon: Github },
+  { label: "Instagram WebDesigner", tooltip: "WebDesigner", href: "https://www.instagram.com/galeria.oli/", social: "instagram", icon: Instagram },
+  { label: "Instagram pessoal", tooltip: "Pessoal", href: "https://www.instagram.com/oliasmatico/", social: "instagram", icon: Instagram },
 ] as const;
 
 interface SocialLinksProps { size?: "sm" | "md" }
 
 export function SocialLinks({ size = "md" }: SocialLinksProps) {
-  const iconSize = size === "sm" ? 15 : 17;
+  const iconSize = size === "sm" ? 22 : 27;
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+    <ul className={`social-links ${size === "sm" ? "social-links-sm" : ""}`} aria-label="Redes sociais">
       {socials.map((social) => (
-        <a key={social.label} href={social.href} target={social.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-accent">
-          <social.icon size={iconSize} /><span>{social.label}</span>
-        </a>
+        <li key={social.label} className="social-icon-content">
+          <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} data-social={social.social}>
+            <span className="social-filled" aria-hidden="true" />
+            <social.icon size={iconSize} aria-hidden="true" />
+          </a>
+          <span className="social-tooltip" role="tooltip">{social.tooltip}</span>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

@@ -1,7 +1,8 @@
-import { Code2, Instagram } from "lucide-react";
+import { Code2 } from "lucide-react";
 import aboutImg from "@/assets/portfolio-visual.webp";
 import { Reveal } from "./Reveal";
 import { SkillsMarquee } from "./SkillsMarquee";
+import { SocialLinks } from "./SocialLinks";
 
 export function About() {
   return (
@@ -23,9 +24,7 @@ export function About() {
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <Reveal>
             <p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">Autodidata<br />19 anos<br />Desenvolvedor em formação</p>
-            <a href="https://www.instagram.com/galeria.oli/" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none">
-              <Instagram size={15} aria-hidden="true" /> @galeria.oli
-            </a>
+            <div className="mt-9"><SocialLinks /></div>
           </Reveal>
           <div className="min-w-0">
             <Reveal>
