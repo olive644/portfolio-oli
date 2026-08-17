@@ -5,7 +5,7 @@ import { InteractiveFolderGallery, type GalleryPhoto } from "@/components/ui/int
 import { TextReveal } from "@/components/ui/cascade-text";
 import { Reveal } from "./Reveal";
 
-const massagePreview = "data:image/svg+xml," + encodeURIComponent(\`
+const massagePreview = "data:image/svg+xml," + encodeURIComponent(`
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
     <defs>
       <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#1f1712"/><stop offset="1" stop-color="#6b4b32"/></linearGradient>
@@ -27,9 +27,9 @@ const massagePreview = "data:image/svg+xml," + encodeURIComponent(\`
     <circle cx="883" cy="271" r="37" fill="#fff7ef" opacity=".9"/>
     <path d="M813 370c56 58 111 61 164 1" fill="none" stroke="#fff7ef" stroke-width="18" stroke-linecap="round"/>
     <circle cx="1034" cy="680" r="55" fill="#e9c49f"/><circle cx="942" cy="696" r="36" fill="#f3ddc5"/>
-  </svg>\`);
+  </svg>`);
 
-const oliPreview = "data:image/svg+xml," + encodeURIComponent(\`
+const oliPreview = "data:image/svg+xml," + encodeURIComponent(`
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
     <defs>
       <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#071d20"/><stop offset="1" stop-color="#103a3d"/></linearGradient>
@@ -48,7 +48,7 @@ const oliPreview = "data:image/svg+xml," + encodeURIComponent(\`
     <path d="M157 678H713M157 585H713M157 492H713" stroke="#2b5b5d" stroke-width="2"/>
     <rect x="193" y="574" width="54" height="104" rx="8" fill="url(#bar)"/><rect x="297" y="526" width="54" height="152" rx="8" fill="url(#bar)"/><rect x="401" y="460" width="54" height="218" rx="8" fill="url(#bar)"/><rect x="505" y="501" width="54" height="177" rx="8" fill="url(#bar)"/><rect x="609" y="430" width="54" height="248" rx="8" fill="url(#bar)"/>
     <rect x="786" y="415" width="295" height="346" rx="17" fill="#0e3538"/><circle cx="934" cy="548" r="95" fill="none" stroke="#1e5653" stroke-width="35"/><path d="M934 453A95 95 0 1 1 854 600" fill="none" stroke="#57dfc7" stroke-width="35"/><text x="892" y="558" fill="#ecfffb" font-family="Arial, sans-serif" font-size="39" font-weight="700">72%</text><text x="836" y="685" fill="#9ccfc8" font-family="Arial, sans-serif" font-size="18">Meta atingida</text>
-  </svg>\`);
+  </svg>`);
 
 const projects = [
   { number: "01", title: "Giselly Victoria Nails", kind: "Site institucional", description: "Site para uma nail designer, com apresentação dos serviços e caminho direto para agendamento.", image: project1, href: "https://gisellynail.vercel.app/" },
