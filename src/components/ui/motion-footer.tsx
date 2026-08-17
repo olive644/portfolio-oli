@@ -97,8 +97,8 @@ export function CinematicContactFooter() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
-      <div id="contato" ref={wrapperRef} className="relative h-[115svh] w-full sm:h-screen" style={{ clipPath: "polygon(0 0,100% 0,100% 100%,0 100%)" }}>
-        <footer className="cinematic-contact fixed inset-0 flex h-[100svh] w-full flex-col overflow-hidden bg-background text-foreground">
+      <div id="contato" ref={wrapperRef} className="relative h-[980px] w-full sm:h-screen" style={{ clipPath: "polygon(0 0,100% 0,100% 100%,0 100%)" }}>
+        <footer className="cinematic-contact absolute inset-0 flex h-full w-full flex-col overflow-hidden bg-background text-foreground sm:fixed sm:h-[100svh]">
           <div className="contact-aurora pointer-events-none absolute left-1/2 top-1/2 z-0 h-[62vh] w-[84vw] rounded-[50%] blur-[90px]" />
           <div className="contact-grid pointer-events-none absolute inset-0 z-0" />
           <div ref={giantRef} className="contact-giant pointer-events-none absolute -bottom-[2vh] left-1/2 z-0 -translate-x-1/2 whitespace-nowrap select-none">OLIVER</div>
@@ -107,17 +107,17 @@ export function CinematicContactFooter() {
             <div className="contact-marquee flex w-max text-[10px] font-extrabold tracking-[.28em] text-muted-foreground sm:text-xs"><MarqueeItem /><MarqueeItem /></div>
           </div>
 
-          <div ref={contentRef} className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 pb-24 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
+          <div ref={contentRef} className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-start px-5 pb-10 pt-28 sm:justify-center sm:px-8 sm:pb-20 sm:pt-32">
             <p className="mb-4 font-mono text-[10px] uppercase tracking-[.24em] text-muted-foreground">05 / Contato</p>
-            <TextReveal text="Vamos conversar" as="h2" fontSize="clamp(3rem,8vw,7.4rem)" staggerDelay={24} duration={340} color="#f4f4f1" hoverColor="#777" className="font-sans" />
+            <TextReveal text="Vamos conversar" as="h2" fontSize="clamp(2.35rem,11.8vw,7.4rem)" staggerDelay={24} duration={340} color="#f4f4f1" hoverColor="#777" className="max-w-full font-sans" />
 
             <form onSubmit={submit} noValidate className="contact-glass mt-7 w-full p-5 sm:mt-9 sm:p-8">
               <div className="flex flex-col gap-5 text-xl font-medium leading-relaxed sm:text-3xl lg:text-4xl">
-                <label className="flex flex-wrap items-baseline gap-2">Oi, eu sou <input value={form.name} onChange={(event) => setValue("name", event.target.value)} placeholder="seu nome" className={inputClass} />.</label>
+                <label className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-baseline">Oi, eu sou <input value={form.name} onChange={(event) => setValue("name", event.target.value)} placeholder="seu nome" className={inputClass} />.</label>
                 {errors.name && <p className="-mt-4 text-xs font-normal text-muted-foreground">{errors.name}</p>}
-                <label className="flex flex-wrap items-baseline gap-2">Meu email é <input type="email" value={form.email} onChange={(event) => setValue("email", event.target.value)} placeholder="voce@email.com" className={inputClass} />.</label>
+                <label className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-baseline">Meu email é <input type="email" value={form.email} onChange={(event) => setValue("email", event.target.value)} placeholder="voce@email.com" className={inputClass} />.</label>
                 {errors.email && <p className="-mt-4 text-xs font-normal text-muted-foreground">{errors.email}</p>}
-                <label className="flex flex-wrap items-baseline gap-2">Quero falar sobre <input value={form.message} onChange={(event) => setValue("message", event.target.value)} placeholder="sua ideia ou projeto" className={inputClass} />.</label>
+                <label className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-baseline">Quero falar sobre <input value={form.message} onChange={(event) => setValue("message", event.target.value)} placeholder="sua ideia ou projeto" className={inputClass} />.</label>
                 {errors.message && <p className="-mt-4 text-xs font-normal text-muted-foreground">{errors.message}</p>}
               </div>
               <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
