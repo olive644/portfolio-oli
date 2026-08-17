@@ -11,20 +11,22 @@ const interests = [
 
 export function About() {
   return (
-    <section id="sobre" className="border-b border-border py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Reveal className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[180px_1fr]">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">02 / Sobre</p>
-          <TextReveal text="Ambicioso" as="h2" fontSize="clamp(3rem, 15vw, 7rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" className="max-w-full font-sans" />
-        </Reveal>
-        <Reveal className="mt-10">
-          <div data-about-stage className="about-parallax relative isolate flex min-h-[430px] items-end justify-center overflow-hidden border border-border sm:min-h-[620px] lg:min-h-[720px]">
+    <section id="sobre" className="border-b border-border">
+      <div id="inicio" className="mx-auto max-w-6xl px-5 pt-20 sm:px-8 sm:pt-24">
+        <Reveal>
+          <div data-about-stage className="about-parallax relative isolate flex min-h-[calc(100svh-6rem)] items-end justify-center overflow-hidden border border-border">
             <div className="about-parallax-grid absolute inset-0" aria-hidden="true" />
             <p data-about-word className="about-parallax-word absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-sans font-black uppercase" aria-hidden="true">Portfolio</p>
             <img data-about-photo src={aboutImg} alt="Oliver Teixeira" className="relative z-20 h-auto max-h-[92%] w-auto max-w-[92%] object-contain object-bottom will-change-transform sm:max-w-[72%] lg:max-w-[58%]" />
             <div className="absolute inset-x-0 bottom-0 z-30 h-28 bg-linear-to-t from-background to-transparent" aria-hidden="true" />
-            <span className="absolute bottom-4 left-4 z-40 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground sm:bottom-6 sm:left-6">Portrait / 02</span>
+            <span className="absolute bottom-4 left-4 z-40 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground sm:bottom-6 sm:left-6">Portrait / 01</span>
           </div>
+        </Reveal>
+      </div>
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <Reveal className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[180px_1fr]">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">01 / Sobre</p>
+          <TextReveal text="Ambicioso" as="h2" fontSize="clamp(3rem, 15vw, 7rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" className="max-w-full font-sans" />
         </Reveal>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <Reveal><p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">Autodidata<br />19 anos<br />Desenvolvedor em formação</p></Reveal>
