@@ -108,7 +108,7 @@ export function CinematicContactFooter() {
           </div>
 
           <div ref={contentRef} className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-start px-5 pb-10 pt-28 sm:justify-center sm:px-8 sm:pb-20 sm:pt-32">
-            <p className="mb-4 font-mono text-[10px] uppercase tracking-[.24em] text-muted-foreground">04 / Contato</p>
+            <p className="mb-4 font-mono text-[10px] uppercase tracking-[.24em] text-muted-foreground">03 / Contato</p>
             <TextReveal text="Vamos conversar" as="h2" fontSize="clamp(2.35rem,11.8vw,7.4rem)" staggerDelay={24} duration={340} color="#f4f4f1" hoverColor="#777" className="max-w-full font-sans" />
 
             <form onSubmit={submit} noValidate className="contact-glass mt-7 w-full p-5 sm:mt-9 sm:p-8">
