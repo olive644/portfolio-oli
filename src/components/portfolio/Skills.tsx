@@ -19,7 +19,7 @@ function SkillKey({ skill, index }: { skill: (typeof skills)[number]; index: num
     ref.current?.style.setProperty("--ry", `${x * 16}deg`);
   };
   const reset = () => { ref.current?.style.setProperty("--rx", "0deg"); ref.current?.style.setProperty("--ry", "0deg"); };
-  return <div className="skill-scene" data-skill-card><div ref={ref} className="skill-key" onPointerMove={move} onPointerLeave={reset}><span className="skill-key-index">0{index + 1}</span><span className="skill-key-code">{skill.code}</span><span className="skill-key-name">{skill.name}</span><span className="skill-key-note">{skill.note}</span></div></div>;
+  return <div className="skill-scene" data-skill-card><div ref={ref} className="skill-key" tabIndex={0} aria-label={`${skill.name}: ${skill.note.toLowerCase()}`} onPointerMove={move} onPointerLeave={reset}><span className="skill-key-index">0{index + 1}</span><span className="skill-key-code">{skill.code}</span><span className="skill-key-name">{skill.name}</span><span className="skill-key-note">{skill.note}</span></div></div>;
 }
 
 export function Skills() {

@@ -28,8 +28,8 @@ main section { position: relative; background-image: linear-gradient(115deg, tra
 .hero-orbit { position: absolute; width: min(75vw,760px); aspect-ratio: 1; right: -18%; top: -24%; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; opacity: .55; }
 .hero-orbit::before, .hero-orbit::after { content: ""; position: absolute; inset: 12%; border: inherit; border-radius: inherit; }
 .hero-orbit::after { inset: 29%; }
-.about-parallax { background: radial-gradient(circle at 50% 44%,#2b2b2b 0%,#111 36%,#050505 72%); }
-.about-parallax-word { font-size: clamp(4rem,15vw,11.5rem); line-height: .8; letter-spacing: -.075em; color: #f4f4f1; text-shadow: 0 12px 40px rgba(0,0,0,.28); will-change: transform; }
+.about-parallax { background: #05070a; }
+.about-parallax-word { font-size: clamp(4rem,15vw,11.5rem); line-height: .8; letter-spacing: -.075em; color: rgba(244,244,241,.94); text-shadow: 0 12px 40px rgba(0,0,0,.55); will-change: transform; }
 
 .motion-shell, .motion-scanline, .motion-vignette { position: fixed; inset: 0; pointer-events: none; }
 .motion-shell { z-index: 90; }
@@ -52,8 +52,14 @@ main section { position: relative; background-image: linear-gradient(115deg, tra
 .skill-key:hover { border-color: #aaa; box-shadow: 1px 1px 0 #666, 7px 8px 0 #292929, 14px 16px 0 #111, 24px 32px 50px rgba(0,0,0,.85); }
 .skill-key-index, .skill-key-note { font: 10px/1 monospace; letter-spacing: .18em; color: #8d8d8d; transform: translateZ(24px); }
 .skill-key-code { align-self: center; font: 400 clamp(3.5rem,7vw,6rem)/.8 var(--font-display); letter-spacing: -.06em; color: #fff; text-shadow: 0 1px 0 #888, 0 3px 10px #000; transform: translateZ(42px); }
-.skill-key-name { align-self: end; font-size: 15px; font-weight: 600; transform: translateZ(30px); }
+.skill-key-name { align-self: end; font-size: 15px; font-weight: 600; opacity: 1; transform: translateY(0) translateZ(30px); filter: blur(0); transition: opacity .35s ease, transform .45s cubic-bezier(.22,1,.36,1), filter .35s ease; }
 .skill-key-note { position: absolute; right: 18px; bottom: 22px; writing-mode: vertical-rl; transform: translateZ(22px); }
+
+@media (hover: hover) and (pointer: fine) {
+  .skill-key-name { opacity: 0; transform: translateY(12px) translateZ(30px); filter: blur(4px); }
+  .skill-key:hover .skill-key-name, .skill-key:focus-visible .skill-key-name { opacity: 1; transform: translateY(0) translateZ(30px); filter: blur(0); }
+  .skill-key:focus-visible { border-color: #aaa; outline: 1px solid rgba(255,255,255,.4); outline-offset: 5px; }
+}
 
 @media (max-width: 767px) {
   .motion-hud { display: none; }

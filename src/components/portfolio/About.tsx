@@ -1,4 +1,4 @@
-import { Code2 } from "lucide-react";
+import { Code2, Instagram } from "lucide-react";
 import aboutImg from "@/assets/about-color.webp";
 import { Reveal } from "./Reveal";
 
@@ -8,9 +8,9 @@ export function About() {
       <div id="inicio" className="pt-16 sm:pt-20">
         <Reveal>
           <div data-about-stage className="about-parallax relative isolate flex min-h-[calc(100svh-4rem)] items-end justify-center overflow-hidden">
-            <p data-about-word className="about-parallax-word absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-sans font-black uppercase" aria-hidden="true">Portfolio</p>
-            <img data-about-photo src={aboutImg} alt="Oliver Teixeira" className="relative z-20 h-auto max-h-[92%] w-auto max-w-[92%] object-contain object-bottom will-change-transform sm:max-w-[72%] lg:max-w-[58%]" />
-            <div className="absolute inset-x-0 bottom-0 z-30 h-28 bg-linear-to-t from-background to-transparent" aria-hidden="true" />
+            <img data-about-photo src={aboutImg} alt="Oliver Teixeira cercado pelas ferramentas que usa para criar" className="absolute inset-0 z-10 h-full w-full object-cover object-center will-change-transform" />
+            <div className="absolute inset-0 z-20 bg-[linear-gradient(180deg,rgba(5,5,5,.2),transparent_32%,transparent_70%,#050505_100%)]" aria-hidden="true" />
+            <p data-about-word className="about-parallax-word absolute left-1/2 top-[16%] z-30 -translate-x-1/2 whitespace-nowrap font-sans font-black uppercase" aria-hidden="true">Portfolio</p>
           </div>
         </Reveal>
       </div>
@@ -19,7 +19,12 @@ export function About() {
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">01 / Sobre</p>
         </Reveal>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-          <Reveal><p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">Autodidata<br />19 anos<br />Desenvolvedor em formação</p></Reveal>
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">Autodidata<br />19 anos<br />Desenvolvedor em formação</p>
+            <a href="https://www.instagram.com/galeria.oli/" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none">
+              <Instagram size={15} aria-hidden="true" /> @galeria.oli
+            </a>
+          </Reveal>
           <div className="min-w-0">
             <Reveal>
               <p className="max-w-2xl text-xl leading-relaxed text-foreground sm:text-2xl">Comecei pela curiosidade: queria saber como sites e jogos saíam de uma ideia e viravam algo que outras pessoas podiam usar. Desde então, estudo por conta própria e testo o que aprendo em projetos de verdade.</p>
