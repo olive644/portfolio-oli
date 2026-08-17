@@ -9,6 +9,7 @@ export interface GalleryPhoto {
   image: string;
   title?: string;
   href?: string;
+  imageFit?: "cover" | "contain";
 }
 
 const defaultPhotos: GalleryPhoto[] = [
@@ -74,6 +75,7 @@ export function InteractiveFolderGallery({
 
           <div className="absolute bottom-10 z-10 flex justify-center">
             {photos.map((photo, i) => {
+              const preserveFullImage = photo.imageFit === "contain" || photo.image.startsWith("data:image/svg+xml");
               const offset = i - (photos.length - 1) / 2;
               const stackY = hoverFolder ? offset * -10 - 40 : offset * -5;
               const stackX = hoverFolder ? offset * (isMobile ? 22 : 30) : offset * 3;
@@ -111,9 +113,23 @@ export function InteractiveFolderGallery({
                   whileDrag={isFolderOpen ? { scale: isMobile ? 1.05 : 1.1, rotate: 4, zIndex: 150 } : {}}
                   transition={{ type: "spring", stiffness: 350, damping: 30 }}
                 >
-                  <img src={photo.image} alt={photo.title || "Item da galeria"} className="pointer-events-none h-full w-full object-cover" />
+                  <div className="pointer-events-none absolute inset-0 overflow-hidden bg-[#090909]">
+                    {preserveFullImage && (
+                      <img
+                        src={photo.image}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-45 blur-xl"
+                      />
+                    )}
+                    <img
+                      src={photo.image}
+                      alt={photo.title || "Item da galeria"}
+                      className={`relative h-full w-full ${preserveFullImage ? "object-contain" : "object-cover"}`}
+                    />
+                  </div>
                   {photo.title && (
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-black via-black/80 to-transparent p-3 pt-10 sm:p-4 sm:pt-12">
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-linear-to-t from-black via-black/80 to-transparent p-3 pt-10 sm:p-4 sm:pt-12">
                       <p className="font-display text-base leading-tight text-white sm:text-xl sm:leading-none">{photo.title}</p>
                       {photo.href && (
                         <a href={photo.href} target="_blank" rel="noreferrer" className="pointer-events-auto mt-3 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 hover:text-white">
