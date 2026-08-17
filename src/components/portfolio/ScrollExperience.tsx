@@ -33,9 +33,7 @@ export function ScrollExperience() {
           });
 
           gsap.fromTo("[data-about-word]", { scale: 1.12, xPercent: -4 }, { scale: 0.96, xPercent: 4, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 0.8 } });
-          gsap.fromTo("[data-about-bg]", { scale: 1.025 }, { scale: 1.045, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 1 } });
-          gsap.fromTo("[data-about-icons]", { yPercent: 2.5, scale: 0.99 }, { yPercent: -2.5, scale: 1.01, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 0.9 } });
-          gsap.fromTo("[data-about-person]", { yPercent: 3 }, { yPercent: -3, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 0.7 } });
+          gsap.fromTo("[data-about-photo]", { yPercent: 3 }, { yPercent: -3, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 0.8 } });
 
           gsap.utils.toArray<HTMLElement>("#projetos article").forEach((article) => {
             const image = article.querySelector("img");
