@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Github, Mail } from "lucide-react";
 export const socials = [
   { label: "GitHub", href: "https://github.com/olive644", icon: Github },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/josé-gilson-8a0482393/", icon: Linkedin },
-  { label: "Instagram", href: "https://www.instagram.com/oliasmatico/", icon: Instagram },
+  { label: "Instagram", href: "https://www.instagram.com/galeria.oli/", icon: Instagram },
   { label: "Email", href: "mailto:oliverteixeira122020@gmail.com", icon: Mail },
 ] as const;
 
