@@ -17,9 +17,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Oliver Teixeira — Desenvolvedor" },
+      { title: "Oliver PORTFOLIO" },
       { name: "description", content: "Portfólio de Oliver Teixeira: projetos web, estudos de programação e criação de jogos." },
-      { name: "author", content: "Oliver Teixeira" }, { property: "og:title", content: "Oliver Teixeira — Desenvolvedor" },
+      { name: "author", content: "Oliver Teixeira" }, { property: "og:title", content: "Oliver PORTFOLIO" },
       { property: "og:description", content: "Projetos web, estudos de programação e criação de jogos." },
       { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     ],
