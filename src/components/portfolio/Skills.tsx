@@ -27,7 +27,7 @@ export function Skills() {
     <section id="skills" className="border-b border-border py-20 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="grid gap-8 border-b border-border pb-10 sm:grid-cols-[180px_1fr]">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">03 / Ferramentas</p>
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">02 / Ferramentas</p>
           <div className="min-w-0"><TextReveal text="Skills" as="h2" fontSize="clamp(3.2rem, 16vw, 7.5rem)" staggerDelay={58} duration={400} color="#f4f4f1" hoverColor="#777" className="max-w-full font-sans" /><p className="mt-5 max-w-xl text-muted-foreground">Tecnologias que uso para transformar uma ideia em interface, lógica ou jogo.</p></div>
         </Reveal>
         <div className="skill-grid mt-14">{skills.map((skill, index) => <SkillKey key={skill.name} skill={skill} index={index} />)}</div>
