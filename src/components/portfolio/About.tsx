@@ -1,5 +1,7 @@
 import { Code2, Instagram } from "lucide-react";
-import aboutImg from "@/assets/portfolio-visual.webp";
+import portfolioBackground from "@/assets/portfolio-bg.webp";
+import portfolioIcons from "@/assets/portfolio-icons.webp";
+import portfolioPerson from "@/assets/portfolio-person.webp";
 import { Reveal } from "./Reveal";
 import { SkillsMarquee } from "./SkillsMarquee";
 
@@ -9,9 +11,11 @@ export function About() {
       <div id="inicio" className="pt-16 sm:pt-20">
         <Reveal>
           <div data-about-stage className="about-parallax relative isolate flex h-[clamp(300px,56.25vw,900px)] items-end justify-center overflow-hidden">
-            <img data-about-photo src={aboutImg} alt="Oliver Teixeira cercado pelas ferramentas que usa para criar" className="absolute inset-0 z-10 h-full w-full object-contain object-center will-change-transform" />
-            <div className="absolute inset-0 z-20 bg-[linear-gradient(180deg,rgba(5,5,5,.2),transparent_32%,transparent_70%,#050505_100%)]" aria-hidden="true" />
-            <p data-about-word className="about-parallax-word absolute left-1/2 top-[16%] z-30 -translate-x-1/2 whitespace-nowrap font-sans font-black uppercase" aria-hidden="true">Portfolio</p>
+            <img data-about-bg src={portfolioBackground} alt="" className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-center will-change-transform" aria-hidden="true" />
+            <p data-about-word className="about-parallax-word pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-sans font-black uppercase" aria-hidden="true">Portfolio</p>
+            <img data-about-icons src={portfolioIcons} alt="" className="pointer-events-none absolute inset-0 z-20 h-full w-full object-contain object-center will-change-transform" aria-hidden="true" />
+            <img data-about-person src={portfolioPerson} alt="Oliver Teixeira apresentando seu perfil de desenvolvedor" className="absolute inset-0 z-30 h-full w-full object-contain object-center will-change-transform" />
+            <div className="pointer-events-none absolute inset-0 z-40 bg-[linear-gradient(180deg,rgba(5,5,5,.08),transparent_28%,transparent_76%,#050505_100%)]" aria-hidden="true" />
           </div>
         </Reveal>
       </div>
