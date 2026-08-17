@@ -1,5 +1,5 @@
 import { Code2, Gamepad2, Music4 } from "lucide-react";
-import aboutImg from "@/assets/about.jpg";
+import aboutImg from "@/assets/about-color.webp";
 import { TextReveal } from "@/components/ui/cascade-text";
 import { Reveal } from "./Reveal";
 
@@ -15,11 +15,20 @@ export function About() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[180px_1fr]">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">02 / Sobre</p>
-          <TextReveal text="Ambicioso" as="h2" fontSize="clamp(3.8rem, 8vw, 7rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" className="font-sans" />
+          <TextReveal text="Ambicioso" as="h2" fontSize="clamp(3rem, 15vw, 7rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" className="max-w-full font-sans" />
         </Reveal>
-        <div className="mt-10 grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <Reveal><img src={aboutImg} alt="Oliver" className="aspect-[4/5] w-full object-cover grayscale" /></Reveal>
-          <div>
+        <Reveal className="mt-10">
+          <div data-about-stage className="about-parallax relative isolate flex min-h-[430px] items-end justify-center overflow-hidden border border-border sm:min-h-[620px] lg:min-h-[720px]">
+            <div className="about-parallax-grid absolute inset-0" aria-hidden="true" />
+            <p data-about-word className="about-parallax-word absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-sans font-black uppercase" aria-hidden="true">Portfolio</p>
+            <img data-about-photo src={aboutImg} alt="Oliver Teixeira" className="relative z-20 h-auto max-h-[92%] w-auto max-w-[92%] object-contain object-bottom will-change-transform sm:max-w-[72%] lg:max-w-[58%]" />
+            <div className="absolute inset-x-0 bottom-0 z-30 h-28 bg-linear-to-t from-background to-transparent" aria-hidden="true" />
+            <span className="absolute bottom-4 left-4 z-40 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground sm:bottom-6 sm:left-6">Portrait / 02</span>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+          <Reveal><p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted-foreground">Autodidata<br />19 anos<br />Desenvolvedor em formação</p></Reveal>
+          <div className="min-w-0">
             <Reveal>
               <p className="max-w-2xl text-xl leading-relaxed text-foreground sm:text-2xl">Comecei pela curiosidade: queria saber como sites e jogos saíam de uma ideia e viravam algo que outras pessoas podiam usar. Desde então, estudo por conta própria e testo o que aprendo em projetos de verdade.</p>
               <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">Gosto tanto da parte visual quanto da lógica. Ainda estou no começo, mas levo cada trabalho como uma chance de melhorar o código, o olhar e a forma de resolver problemas.</p>

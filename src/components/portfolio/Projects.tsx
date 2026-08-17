@@ -17,7 +17,7 @@ export function Projects() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="grid gap-6 sm:grid-cols-[180px_1fr]">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">04 / Projetos</p>
-          <div><TextReveal text="Projetos" as="h2" fontSize="clamp(4rem, 9vw, 7.5rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" className="font-sans" /><p className="mt-5 max-w-xl text-muted-foreground">Clique para espalhar os projetos. Arraste uma imagem para baixo para guardar tudo novamente.</p></div>
+          <div className="min-w-0"><TextReveal text="Projetos" as="h2" fontSize="clamp(3.2rem, 16vw, 7.5rem)" staggerDelay={44} duration={380} direction="down" color="#f4f4f1" hoverColor="#777" className="max-w-full font-sans" /><p className="mt-5 max-w-xl text-muted-foreground">Clique para espalhar os projetos. Arraste uma imagem para baixo para guardar tudo novamente.</p></div>
         </Reveal>
         <Reveal className="mt-4" delay={100}><InteractiveFolderGallery photos={galleryPhotos} folderName="Meus projetos.folder" dragHintText="Arraste uma imagem para baixo para fechar" /></Reveal>
         <div className="divide-y divide-border border-y border-border">

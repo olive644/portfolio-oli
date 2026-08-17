@@ -64,7 +64,7 @@ export function InteractiveFolderGallery({
               const stackX = hoverFolder ? offset * (isMobile ? 22 : 30) : offset * 3;
               const stackRotate = hoverFolder ? offset * 8 : offset * 3;
               const stackScale = 1 - Math.abs(offset) * 0.03;
-              const openX = offset * (isMobile ? 150 : 300);
+              const openX = offset * (isMobile ? 105 : 300);
 
               return (
                 <motion.div
@@ -78,7 +78,7 @@ export function InteractiveFolderGallery({
                       setHoverFolder(false);
                     }
                   }}
-                  className={`absolute bottom-0 h-60 w-44 origin-bottom overflow-hidden rounded-lg border border-white/20 bg-black shadow-[0_20px_40px_rgba(0,0,0,0.65)] sm:h-72 sm:w-56 ${isFolderOpen ? "pointer-events-auto cursor-grab active:cursor-grabbing" : "pointer-events-none"}`}
+                  className={`absolute bottom-0 h-56 w-40 origin-bottom overflow-hidden rounded-lg border border-white/20 bg-black shadow-[0_20px_40px_rgba(0,0,0,0.65)] sm:h-72 sm:w-56 ${isFolderOpen ? "pointer-events-auto cursor-grab active:cursor-grabbing" : "pointer-events-none"}`}
                   animate={
                     !isFolderOpen
                       ? { y: stackY, x: stackX, rotate: stackRotate, scale: stackScale, zIndex: i + 10 }
