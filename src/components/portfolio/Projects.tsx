@@ -1,3 +1,10 @@
+import { ArrowUpRight } from "lucide-react";
+import project1 from "@/assets/project1.jpg";
+import project2 from "@/assets/project2.jpg";
+import { InteractiveFolderGallery, type GalleryPhoto } from "@/components/ui/interactive-folder-gallery";
+import { TextReveal } from "@/components/ui/cascade-text";
+import { Reveal } from "./Reveal";
+
 const massagePreview = "data:image/svg+xml," + encodeURIComponent(\`
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
     <defs>
