@@ -32,10 +32,8 @@ export function ScrollExperience() {
             gsap.fromTo(title, { yPercent: 30, rotateX: -12, transformOrigin: "50% 100%" }, { yPercent: 0, rotateX: 0, ease: "none", scrollTrigger: { trigger: title, start: "top 95%", end: "top 58%", scrub: true } });
           });
 
-          gsap.fromTo("[data-skill-card]", { y: 110, rotateX: -28, autoAlpha: 0, transformOrigin: "50% 100%" }, { y: 0, rotateX: 0, autoAlpha: 1, stagger: 0.09, duration: 1.15, ease: "power4.out", scrollTrigger: { trigger: ".skill-grid", start: "top 82%", once: true } });
-
           gsap.fromTo("[data-about-word]", { scale: 1.12, xPercent: -4 }, { scale: 0.96, xPercent: 4, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 0.8 } });
-          gsap.fromTo("[data-about-photo]", { yPercent: 10, scale: 1.04 }, { yPercent: -4, scale: 1, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 0.8 } });
+          gsap.fromTo("[data-about-photo]", { yPercent: 3 }, { yPercent: -3, ease: "none", scrollTrigger: { trigger: "[data-about-stage]", start: "top bottom", end: "bottom top", scrub: 0.8 } });
 
           gsap.utils.toArray<HTMLElement>("#projetos article").forEach((article) => {
             const image = article.querySelector("img");

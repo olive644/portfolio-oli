@@ -1,19 +1,21 @@
 import { Code2, Instagram } from "lucide-react";
-import aboutImg from "@/assets/about-color.webp";
+import aboutImg from "@/assets/portfolio-visual.webp";
 import { Reveal } from "./Reveal";
+import { SkillsMarquee } from "./SkillsMarquee";
 
 export function About() {
   return (
     <section id="sobre" className="border-b border-border">
       <div id="inicio" className="pt-16 sm:pt-20">
         <Reveal>
-          <div data-about-stage className="about-parallax relative isolate flex min-h-[calc(100svh-4rem)] items-end justify-center overflow-hidden">
-            <img data-about-photo src={aboutImg} alt="Oliver Teixeira cercado pelas ferramentas que usa para criar" className="absolute inset-0 z-10 h-full w-full object-cover object-center will-change-transform" />
+          <div data-about-stage className="about-parallax relative isolate flex h-[clamp(300px,56.25vw,900px)] items-end justify-center overflow-hidden">
+            <img data-about-photo src={aboutImg} alt="Oliver Teixeira cercado pelas ferramentas que usa para criar" className="absolute inset-0 z-10 h-full w-full object-contain object-center will-change-transform" />
             <div className="absolute inset-0 z-20 bg-[linear-gradient(180deg,rgba(5,5,5,.2),transparent_32%,transparent_70%,#050505_100%)]" aria-hidden="true" />
             <p data-about-word className="about-parallax-word absolute left-1/2 top-[16%] z-30 -translate-x-1/2 whitespace-nowrap font-sans font-black uppercase" aria-hidden="true">Portfolio</p>
           </div>
         </Reveal>
       </div>
+      <SkillsMarquee />
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <Reveal className="border-b border-border pb-5">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">01 / Sobre</p>
