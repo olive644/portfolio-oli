@@ -11,7 +11,7 @@ export function Hero() {
         <div>
           <p data-hero-kicker className="mb-8 font-mono text-xs uppercase tracking-[0.22em] text-accent">Oliver Teixeira · Desenvolvedor em formação</p>
           <div className="overflow-hidden py-2 [perspective:900px]">
-            <div data-hero-title><TextReveal text="Sobre Mim" as="h1" fontSize="clamp(3.2rem, 16vw, 9.5rem)" staggerDelay={38} duration={360} easing="cubic-bezier(0.22, 1, 0.36, 1)" color="#f4f4f1" hoverColor="#858585" className="max-w-full font-sans sm:max-w-4xl" /></div>
+            <div data-hero-title><TextReveal text="Portfolio" as="h1" fontSize="clamp(3rem, 15vw, 9.5rem)" staggerDelay={38} duration={360} easing="cubic-bezier(0.22, 1, 0.36, 1)" color="#f4f4f1" hoverColor="#858585" className="max-w-full font-sans sm:max-w-4xl" /></div>
           </div>
           <div data-hero-copy className="mt-10 grid max-w-3xl gap-8 border-t border-border pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">Tenho 19 anos e aprendo programação construindo. Aqui estão os projetos, ferramentas e interesses que formam meu caminho até agora.</p>
