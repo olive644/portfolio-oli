@@ -109,18 +109,31 @@ const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {
         loading="lazy"
         className="pointer-events-none h-7 w-7 select-none object-contain grayscale transition duration-300 group-hover:scale-110 group-hover:grayscale-0 sm:h-9 sm:w-9"
       />
-      <span className="whitespace-nowrap font-sans text-lg font-semibold tracking-[-0.03em] text-white/65 transition-colors duration-300 group-hover:text-white sm:text-2xl">
+      <span className="whitespace-nowrap font-sans text-lg font-semibold tracking-[-0.03em] text-white/90 transition-colors duration-300 group-hover:text-white sm:text-2xl">
         {logo.alt}
       </span>
     </div>
   );
 });
 
-export const LogoMarquee = memo(function LogoMarquee({ logos, className }: { logos: Logo[]; className?: string }) {
+export const LogoMarquee = memo(function LogoMarquee({
+  logos,
+  className,
+}: {
+  logos: Logo[];
+  className?: string;
+}) {
   return (
-    <div className={cn("mx-auto w-full max-w-[1600px] overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] sm:py-7", className)}>
+    <div
+      className={cn(
+        "mx-auto w-full max-w-[1600px] overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] sm:py-7",
+        className,
+      )}
+    >
       <InfiniteSlider gap={14} reverse duration={42} durationOnHover={75}>
-        {logos.map((logo) => <LogoImage key={logo.alt} logo={logo} />)}
+        {logos.map((logo) => (
+          <LogoImage key={logo.alt} logo={logo} />
+        ))}
       </InfiniteSlider>
     </div>
   );

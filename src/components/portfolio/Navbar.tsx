@@ -1,26 +1,58 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
 const links = [
-  { label: "Sobre", href: "#sobre" },
+  { label: "Perfil", href: "#sobre" },
   { label: "Ferramentas", href: "#skills" },
-  { label: "Projetos", href: "#projetos" },
+  { label: "Portfólio", href: "#projetos" },
   { label: "Contato", href: "#contato" },
 ];
-
 export function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#inicio" className="font-mono text-xs font-bold uppercase tracking-[0.2em]">OLI / DEV</a>
-        <ul className="hidden items-center gap-7 md:flex">
-          {links.map((link) => <li key={link.href}><a href={link.href} className="text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground">{link.label}</a></li>)}
+    <header className="portfolio-nav">
+      <nav aria-label="Navegação principal" className="nav-inner">
+        <a href="#inicio" className="nav-brand">
+          <span className="window-dots" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
+          oli<span className="sr-only"> — início</span>
+        </a>
+        <ul className="nav-links">
+          {links.map((link, i) => (
+            <li key={link.href}>
+              <a className={i === 0 ? "nav-profile" : ""} href={link.href}>
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
-        <a href="#contato" className="hidden border-b-2 border-accent pb-1 text-xs font-semibold uppercase tracking-[0.12em] md:block">Falar comigo</a>
-        <button type="button" aria-label={open ? "Fechar menu" : "Abrir menu"} onClick={() => setOpen(!open)} className="md:hidden">{open ? <X size={20} /> : <Menu size={20} />}</button>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+        <span className="nav-spark" aria-hidden="true">
+          ✦
+        </span>
       </nav>
-      {open && <ul className="border-t border-border bg-background px-5 py-4 md:hidden">{links.map((link) => <li key={link.href}><a href={link.href} onClick={() => setOpen(false)} className="block border-b border-border py-4 text-sm">{link.label}</a></li>)}</ul>}
+      {open && (
+        <ul id="mobile-navigation" className="mobile-navigation">
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} onClick={() => setOpen(false)}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </header>
   );
 }
