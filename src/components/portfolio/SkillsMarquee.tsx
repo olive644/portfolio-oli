@@ -13,7 +13,7 @@ const skills: Logo[] = [
 
 export function SkillsMarquee() {
   return (
-    <section id="skills" className="border-y border-border bg-[#050505]" aria-label="Ferramentas que utilizo">
+    <section id="skills" className="" aria-label="Ferramentas que utilizo">
       <LogoMarquee logos={skills} />
     </section>
   );
